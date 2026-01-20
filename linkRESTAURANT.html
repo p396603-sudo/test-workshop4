@@ -1,11 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ร้านอาหารใกล้เคียง</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .restaurant-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .restaurant-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0),
+                        linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+
+        .restaurant-content {
+            padding: 20px;
+        }
+
+        .restaurant-name {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .restaurant-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .restaurant-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .info-icon {
+            color: #667eea;
+            font-weight: bold;
+            min-width: 20px;
+        }
+
+        .time-info {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .time-badge {
+            background: #f0f4ff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .restaurant-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h2>Hello! i'm akkanirut</h2>
+    <div class="container">
+        <h1>🍽️ ร้านอาหารใกล้เคียง</h1>
+        
+        <div class="restaurant-grid">
+            <div class="restaurant-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS59a-I5jE4AWO7cLOdk1cVWB_vGr27L7EdUQ&s" alt="ห้งเขาสร้างหลา" class="restaurant-image" onerror="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'">
+                <div class="restaurant-content">
+                    <h2 class="restaurant-name">หมูกระทะริมเขา</h2>
+                    <p class="restaurant-description">หมูกระทะ วิวภูเขา บรรยากาศดี</p>
+                    <div class="restaurant-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>อำเภอหล่มสัก จังหวัดเพชรบูรณ์</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span>0957788990</span>
+                        </div>
+                        <div class="time-info">
+                            <span class="time-badge">⏰ เปิด 16:00</span>
+                            <span class="time-badge">🌙 ปิด 23:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <img src="https://i.ytimg.com/vi/VUHOUQbLCzE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA9GeeN8xPBnv5C6VOAsllKek91sw" alt="กะหลำตัวจักรีเวิอร์" class="restaurant-image" onerror="this.style.background='linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'">
+                <div class="restaurant-content">
+                    <h2 class="restaurant-name">ก๋วยเตี๋ยวเรือ</h2>
+                    <p class="restaurant-description">ก๋วยเตี๋ยวสูตรโบราณ</p>
+                    <div class="restaurant-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>ใกล้ตลาดหล่มสักเพชรบูรณ์</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span>0861122334</span>
+                        </div>
+                        <div class="time-info">
+                            <span class="time-badge">⏰ เปิด 08:00</span>
+                            <span class="time-badge">🌙 ปิด 16:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <img src="https://live.staticflickr.com/65535/52985416523_27bc1a0ab3.jpg" alt="ครัวบ้านสคร" class="restaurant-image" onerror="this.style.background='linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'">
+                <div class="restaurant-content">
+                    <h2 class="restaurant-name">ครัวบ้านสวน</h2>
+                    <p class="restaurant-description">อาหารไทยพื้นบ้าน บรรยากาศธรรมชาติ</p>
+                    <div class="restaurant-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>ตำบลชนแดน อำเภอชนแดน จังหวัดเพชรบูรณ์</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span>0898765432</span>
+                        </div>
+                        <div class="time-info">
+                            <span class="time-badge">⏰ เปิด 10:00</span>
+                            <span class="time-badge">🌙 ปิด 21:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbuggiJMO74Kw0vcHzVajLds8UBMhzuCSB6Q&s" alt="กาแฟห่างหมายแด" class="restaurant-image" onerror="this.style.background='linear-gradient(135deg, #fa709a 0%, #fee140 100%)'">
+                <div class="restaurant-content">
+                    <h2 class="restaurant-name">บ้านกาแฟในสวน</h2>
+                    <p class="restaurant-description">กาแฟสด วิวสวย</p>
+                    <div class="restaurant-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>อำเภอหล่มสัก จังหวัดเพชรบูรณ์</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span>0924455667</span>
+                        </div>
+                        <div class="time-info">
+                            <span class="time-badge">⏰ เปิด 07:00</span>
+                            <span class="time-badge">🌙 ปิด 18:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtr1K0qK7Gp3kanYOtU2qJajJyPmFYTx9Imw&s" alt="ร้านเวเนพระบุรี" class="restaurant-image" onerror="this.style.background='linear-gradient(135deg, #30cfd0 0%, #330867 100%)'">
+                <div class="restaurant-content">
+                    <h2 class="restaurant-name">ร้านอาหารบ้านริมคลอง</h2>
+                    <p class="restaurant-description">อาหารอีสานรสจัดจ้าน</p>
+                    <div class="restaurant-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>อำเภอเมือง จังหวัดเพชรบูรณ์</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span>0812345678</span>
+                        </div>
+                        <div class="time-info">
+                            <span class="time-badge">⏰ เปิด 09:00</span>
+                            <span class="time-badge">🌙 ปิด 20:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
